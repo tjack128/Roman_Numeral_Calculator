@@ -1,0 +1,449 @@
+package roman_numeral_calculator;
+import java.util.*;
+
+public class Roman_Numeral_Calculator {
+      static Scanner scan = new Scanner(System.in);
+     // static DecimalFormat twoDec = new DecimalFormat ("0.00");
+      static int number;
+    public static void main(String[] args) {
+      
+   
+      
+       
+         do 
+         {
+            System.out.println("****************************************");
+            System.out.println("*** 1:* Multiply                     ***");
+            System.out.println("*** 2:+ Add                          ***");
+            System.out.println("*** 3:- Subtract                     ***");
+            System.out.println("*** 4:/ Division                     ***");
+            System.out.println("*** 5:  Quit                         ***");
+            System.out.println("****************************************");
+            System.out.println("Please enter 1, 2, 3, 4, or 5 to quit **");
+            number = scan.nextInt();
+            System.out.println();
+            
+            
+            switch (number)
+            {
+               case 1: Multiply();
+                  break;
+               case 2: Addition();
+                  break;
+               case 3: Subtraction();
+                  break;
+               case 4: Division();
+                  break;
+            }
+         }
+           while (number != 5);
+      
+      }
+                 
+    
+       public static void Multiply()
+      {
+         String operator, f_number, s_number, m = " ";
+         int i, Pro, Pro2, Pro3, s_number2, num, Pro4;
+         Pro = 0;
+         Pro2 = 0;
+        int Sum = 0;
+         //if (Sum == 2 || Sum == 3 || Sum == 12)
+
+         
+         System.out.println("Enter the first number: ");
+         f_number = scan.next();
+           
+         for (i = 0; i < f_number.length() ; i++)
+         {
+            char f_number1 = f_number.charAt(i);
+            switch (f_number1)
+            {
+               case 'M': Pro += 1000;
+                  break;
+               case 'C': Pro += 100;
+                  break;
+               case 'X': Pro += 10;
+                  break;
+               case 'V': Pro += 5;
+                  break;
+               case 'I': Pro += 1;
+                  break;
+            }
+         } 
+                  
+         System.out.println("The first number is " +Pro);
+           
+       
+           
+         System.out.println("Enter the second number: ");
+         s_number = scan.next();
+         for (i = 0; i < s_number.length() ; i++)
+         {
+            char s_number1 = s_number.charAt(i);
+            switch (s_number1)
+            {
+               case 'M': Pro2 += 1000;
+                  break;
+               case 'C': Pro2 += 100;
+                  break;
+               case 'L': Pro2 += 50;
+                  break;
+               case 'X': Pro2 += 10;
+                  break;
+               case 'V': Pro2 += 5;
+                  break;
+               case 'I': Pro2 += 1;
+                  break;
+            }
+         
+         } 
+         System.out.println("The second number is "+Pro2);
+           
+         Pro3 = Pro * Pro2;
+         Pro4 = Pro3; 
+         while(Pro4 > 0)
+         {
+         if (Pro4 >= 1000)
+         {
+         m = m + "M";
+         Pro4 = Pro4 - 1000;
+         }
+         else if (Pro4 >= 100)
+         {
+         m = m + "C";
+         Pro4 = Pro4 - 100;
+         }
+         else if (Pro4 >= 50)
+         {
+         m = m + "L";
+         Pro4 = Pro4 - 50;
+         }
+         else if (Pro4 >= 10)
+         {
+         m = m + "X";
+         Pro4 = Pro4 - 10;
+         }
+         else if (Pro4 >= 5)
+         {
+         m = m + "V";
+         Pro4 = Pro4 - 5;
+         }
+         else if (Pro4 >= 1)
+         {
+         m = m + "I";
+         Pro4 = Pro4 - 1;
+         }
+}
+
+           
+         System.out.println("The product of " +f_number+ " and " +s_number+ " is"+m+ "("+Pro3+")");
+      } 
+           
+          
+                     
+       public static void Addition()
+      {
+           
+         String operator, f_number, s_number, a = " ";
+         int i, Sum, Sum2, Sum3, s_number2, Sum4;
+         Sum = 0;
+         Sum2 = 0;
+      
+         
+           
+           
+         System.out.println("Enter the first number: ");
+         f_number = scan.next();
+           
+         for (i = 0; i < f_number.length() ; i++)
+         {
+            char f_number1 = f_number.charAt(i);
+            switch (f_number1)
+            {
+               case 'M': Sum += 1000;
+                  break;
+               case 'C': Sum += 100;
+                  break;
+               case 'X': Sum += 10;
+                  break;
+               case 'V': Sum += 5;
+                  break;
+               case 'I': Sum += 1;
+                  break;
+            }
+         } 
+           
+                     
+         System.out.println("The first number is " +Sum);
+           
+       
+           
+         System.out.println("Enter the second number: ");
+         s_number = scan.next();
+         for (i = 0; i < s_number.length() ; i++)
+         {
+            char s_number1 = s_number.charAt(i);
+            switch (s_number1)
+            {
+               case 'M': Sum2 += 1000;
+                  break;
+               case 'C': Sum2 += 100;
+                  break;
+               case 'L': Sum2 += 50;
+                  break;
+               case 'X': Sum2 += 10;
+                  break;
+               case 'V': Sum2 += 5;
+                  break;
+               case 'I': Sum2 += 1;
+                  break;
+            }
+         
+         } 
+         System.out.println("The second number is "+Sum2);
+           
+         Sum3 = Sum + Sum2;
+         Sum4 = Sum3;  
+           while(Sum4 > 0)
+         {
+         if (Sum4 >= 1000)
+         {
+         a = a + "M";
+         Sum4 = Sum4 - 1000;
+         }
+         else if (Sum4 >= 100)
+         {
+         a = a + "C";
+         Sum4 = Sum4 - 100;
+         }
+         else if (Sum4 >= 50)
+         {
+         a = a + "L";
+         Sum4 = Sum4 - 50;
+         }
+         else if (Sum4 >= 10)
+         {
+         a = a + "X";
+         Sum4 = Sum4 - 10;
+         }
+         else if (Sum4 >= 5)
+         {
+         a = a + "V";
+         Sum4 = Sum4 - 5;
+         }
+         else if (Sum4 >= 1)
+         {
+         a = a + "I";
+         Sum4 = Sum4 - 1;
+         }
+}
+
+
+
+       
+           
+         System.out.println("The sum of " +f_number+ " and " +s_number+ " is"+a+"(" +Sum3+")");
+      } 
+           
+          
+       public static void Subtraction()
+      {
+            
+         String operator, f_number, s_number, d = " ";
+         int i, Dif, Dif2, Dif3, s_number2, Dif4;
+         Dif = 0;
+         Dif2 = 0;
+      
+      
+           
+           
+         System.out.println("Enter the first number: ");
+         f_number = scan.next();
+           
+         for (i = 0; i < f_number.length() ; i++)
+         {
+            char f_number1 = f_number.charAt(i);
+            switch (f_number1)
+            {
+               case 'M': Dif += 1000;
+                  break;
+               case 'C': Dif += 100;
+                  break;
+               case 'X': Dif += 10;
+                  break;
+               case 'V': Dif += 5;
+                  break;
+               case 'I': Dif += 1;
+                  break;
+            }
+         } 
+           
+			  
+                     
+         System.out.println("The first number is " +Dif);
+           
+       
+           
+         System.out.println("Enter the second number: ");
+         s_number = scan.next();
+         for (i = 0; i < s_number.length() ; i++)
+         {
+            char s_number1 = s_number.charAt(i);
+            switch (s_number1)
+            {
+               case 'M': Dif2 += 1000;
+                  break;
+               case 'C': Dif2 += 100;
+                  break;
+               case 'L': Dif2 += 50;
+                  break;
+               case 'X': Dif2 += 10;
+                  break;
+               case 'V': Dif2 += 5;
+                  break;
+               case 'I': Dif2 += 1;
+                  break;
+            }
+         
+         } 
+         System.out.println("The second number is "+Dif2);
+           
+         Dif3 = Dif - Dif2;
+         Dif4 = Dif3;
+            while(Dif4 > 0)
+         {
+         if (Dif4 >= 1000)
+         {
+         d = d + "M";
+         Dif4 = Dif4 - 1000;
+         }
+         else if (Dif4 >= 100)
+         {
+         d = d + "C";
+         Dif4 = Dif4 - 100;
+         }
+         else if (Dif4 >= 50)
+         {
+         d = d + "L";
+         Dif4 = Dif4 - 50;
+         }
+         else if (Dif4 >= 10)
+         {
+         d = d + "X";
+         Dif4 = Dif4 - 10;
+         }
+         else if (Dif4 >= 5)
+         {
+         d = d + "V";
+         Dif4 = Dif4 - 5;
+         }
+         else if (Dif4 >= 1)
+         {
+         d = d + "I";
+         Dif4 = Dif4 - 1;
+         }
+       }    
+         System.out.println("The difference of " +f_number+ " and " +s_number+ " is"+d+"(" +Dif3+")");
+      } 
+           
+          
+       public static void Division()
+      {
+         String operator, f_number, s_number, q = " ";
+         int i, Quo, Quo2, Quo3, s_number2, Quo4;
+         Quo = 0;
+         Quo2 = 0;
+      
+         
+           
+           
+         System.out.println("Enter the first number: ");
+         f_number = scan.next();
+           
+         for (i = 0; i < f_number.length() ; i++)
+         {
+            char f_number1 = f_number.charAt(i);
+            switch (f_number1)
+            {
+               case 'M': Quo += 1000;
+                  break;
+               case 'C': Quo += 100;
+                  break;
+               case 'X': Quo += 10;
+                  break;
+               case 'V': Quo += 5;
+                  break;
+               case 'I': Quo += 1;
+                  break;
+            }
+         } 
+           
+                     
+         System.out.println("The first number is " +Quo);
+           
+       
+           
+         System.out.println("Enter the second number: ");
+         s_number = scan.next();
+         for (i = 0; i < s_number.length() ; i++)
+         {
+            char s_number1 = s_number.charAt(i);
+            switch (s_number1)
+            {
+               case 'M': Quo2 += 1000;
+                  break;
+               case 'C': Quo2 += 100;
+                  break;
+               case 'L': Quo2 += 50;
+                  break;
+               case 'X': Quo2 += 10;
+                  break;
+               case 'V': Quo2 += 5;
+                  break;
+               case 'I': Quo2 += 1;
+                  break;
+            }
+         
+         } 
+         System.out.println("The second number is "+Quo2);
+           
+         Quo3 = Quo / Quo2;
+         Quo4 = Quo3;
+          while(Quo4 > 0)
+         {
+         if (Quo4 >= 1000)
+         {
+         q = q + "M";
+         Quo4 = Quo4 - 1000;
+         }
+         else if (Quo4 >= 100)
+         {
+         q = q + "C";
+         Quo4 = Quo4 - 100;
+         }
+         else if (Quo4 >= 50)
+         {
+         q = q + "L";
+         Quo4 = Quo4 - 50;
+         }
+         else if (Quo4 >= 10)
+         {
+         q = q + "X";
+         Quo4 = Quo4 - 10;
+         }
+         else if (Quo4 >= 5)
+         {
+         q = q + "V";
+         Quo4 = Quo4 - 5;
+         }
+         else if (Quo4 >= 1)
+         {
+         q = q + "I";
+         Quo4 = Quo4 - 1;
+         }
+  }
+         System.out.println("The quotient of " +f_number+ " and " +s_number+ " is"+q+ " (" +Quo3+")");
+      } 
+           
+}             
